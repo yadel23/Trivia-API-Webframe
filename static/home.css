@@ -1,0 +1,232 @@
+/* Home Page */
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: #FFFFFF;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* background: Rectangle 16 */
+
+position: absolute;
+width: 1440px;
+height: 1024px;
+left: 0px;
+top: 0px;
+
+background: #6479EB;
+
+
+/* design: Ellipse 12 */
+
+position: absolute;
+width: 100px;
+height: 100px;
+left: 193px;
+top: 169px;
+
+background: #E46C6C;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* design: Ellipse 11 */
+
+position: absolute;
+width: 286px;
+height: 286px;
+left: 1089px;
+top: 39px;
+
+background: #54B8F0;
+
+
+/* design: Ellipse 13 */
+
+position: absolute;
+width: 182px;
+height: 182px;
+left: 87px;
+top: 705px;
+
+background: #D9FA7D;
+
+
+/* design: Ellipse 14 */
+
+position: absolute;
+width: 150px;
+height: 150px;
+left: 103px;
+top: 721px;
+
+background: #6479EB;
+
+
+/* design: Ellipse 15 */
+
+position: absolute;
+width: 251px;
+height: 248px;
+left: 1296px;
+top: 705px;
+
+background: #FF5C5C;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* center title circle: Ellipse 16 */
+
+position: absolute;
+width: 580px;
+height: 580px;
+left: 430px;
+top: 182px;
+
+background: #3A4998;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* design: Ellipse 17 */
+
+position: absolute;
+width: 261px;
+height: 261px;
+left: 1101px;
+top: 51px;
+
+background: #6479EB;
+
+
+/* corner box: Rectangle 32 */
+
+position: absolute;
+width: 786px;
+height: 103px;
+left: -55px;
+top: -7px;
+
+background: #C67CE9;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Rectangle 33 */
+
+position: absolute;
+width: 160px;
+height: 71px;
+left: 18px;
+top: 15px;
+
+background: #6479EB;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Delete, empty: Rectangle 34 */
+
+position: absolute;
+visibility: hidden;
+width: 160px;
+height: 71px;
+left: 213px;
+top: 15px;
+
+background: #6479EB;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
+/* Info */
+
+position: absolute;
+width: 104px;
+height: 36px;
+left: 47px;
+top: 35px;
+
+font-family: Offside;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 38px;
+text-align: center;
+
+color: #FFFFFF;
+
+
+
+/* title design: Line 1 */
+
+position: absolute;
+width: 855.59px;
+height: 0px;
+left: 440.5px;
+top: 191px;
+
+border: 1px solid #000000;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+transform: rotate(45deg);
+
+
+/* title design: Line 2 */
+
+position: absolute;
+width: 874.64px;
+height: 0px;
+left: 403px;
+top: 796px;
+
+border: 1px solid #000000;
+transform: rotate(-42.78deg);
+
+
+/* Trivia Kings */
+
+position: absolute;
+width: 874px;
+height: 279px;
+left: 293px;
+top: 284px;
+
+font-family: Offside;
+font-style: normal;
+font-weight: normal;
+font-size: 150px;
+line-height: 189px;
+text-align: center;
+
+color: #DCB1B1;
+
+
+
+/* Welcome! Let us help you enhance your KNOWLAGE */
+
+position: absolute;
+width: 710px;
+height: 124px;
+left: 349px;
+top: 848px;
+
+font-family: Offside;
+font-style: normal;
+font-weight: normal;
+font-size: 50px;
+line-height: 63px;
+display: flex;
+align-items: flex-end;
+text-align: center;
+
+color: #DCB1B1;
+
+
+
+/* Link Underline: Line 3 */
+
+position: absolute;
+width: 254.02px;
+height: 0px;
+left: 779px;
+top: 961px;
+
+border: 1px solid #000000;
+transform: rotate(-0.72deg);

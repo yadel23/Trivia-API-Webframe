@@ -1,0 +1,466 @@
+/* Info Page */
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+background: #A32626;
+
+
+/* delete, empty: Ellipse 20 */
+
+position: absolute;
+visibility: hidden;
+width: 137px;
+height: 137px;
+left: 501px;
+top: 871px;
+
+background: #FFAC5F;
+
+
+/* delete, empty: Ellipse 21 */
+
+position: absolute;
+visibility: hidden;
+width: 100px;
+height: 100px;
+left: 571px;
+top: 903px;
+
+background: #8D1A1A;
+
+
+/* background: Rectangle 20 */
+
+position: absolute;
+width: 1440px;
+height: 1024px;
+left: 0px;
+top: 0px;
+
+background: #6479EB;
+
+
+/* top left corner box: Rectangle 19 */
+
+position: absolute;
+width: 786px;
+height: 103px;
+left: 0px;
+top: 0px;
+
+background: #C67CE9;
+
+
+/* home button: Frame 1 */
+
+/* Auto Layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 10px;
+
+position: absolute;
+width: 160px;
+height: 71px;
+left: 25px;
+top: 86px;
+
+background: #6479EB;
+transform: matrix(1, 0, 0, -1, 0, 0);
+
+
+/* Home */
+
+position: static;
+width: 140px;
+height: 40px;
+left: 10px;
+top: 21px;
+
+font-family: Offside;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 38px;
+text-align: center;
+
+color: #FFFFFF;
+
+
+/* Inside Auto Layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 10px 0px;
+
+
+/* submit box: Rectangle 35 */
+
+position: absolute;
+width: 160px;
+height: 71px;
+left: 233px;
+top: 903px;
+
+background: #DCB1B1;
+
+
+/* delete, empty: Rectangle 38 */
+
+position: absolute;
+visibility: hidden;
+width: 160px;
+height: 71px;
+left: 449px;
+top: 20px;
+
+background: #6479EB;
+
+
+/* submit */
+
+position: absolute;
+width: 108px;
+height: 32px;
+left: 259px;
+top: 923px;
+
+font-family: Offside;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 38px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* right outer box: Rectangle 36 */
+
+position: absolute;
+width: 720px;
+height: 1024px;
+left: 720px;
+top: 0px;
+
+background: #DCB1B1;
+
+
+/* answer 1 box: Rectangle 37 */
+
+position: absolute;
+width: 608px;
+height: 78px;
+left: 35px;
+top: 207px;
+
+background: #DCB1B1;
+
+
+/* popup: numbers */
+
+position: absolute;
+width: 254px;
+height: 38px;
+left: 198px;
+top: 215px;
+
+font-family: Offside;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 38px;
+/* identical to box height */
+text-align: center;
+
+color: #000000;
+
+
+
+/* inner box (instructions/info): Rectangle 39 */
+
+position: absolute;
+width: 610px;
+height: 103px;
+left: 775px;
+top: 0px;
+
+background: #6479EB;
+
+
+/* instructions/info */
+
+position: absolute;
+width: 488px;
+height: 86px;
+left: 836px;
+top: 23px;
+
+font-family: Offside;
+font-style: normal;
+font-weight: normal;
+font-size: 50px;
+line-height: 63px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* inner box (stuff goes here): Rectangle 40 */
+
+position: absolute;
+width: 610px;
+height: 768px;
+left: 775px;
+top: 187px;
+
+background: #C67CE9;
+
+
+/* answer 2 box: Rectangle 41 */
+
+position: absolute;
+width: 608px;
+height: 80px;
+left: 35px;
+top: 384px;
+
+background: #DCB1B1;
+
+
+/* answer 3 box: Rectangle 42 */
+
+position: absolute;
+width: 610px;
+height: 91px;
+left: 35px;
+top: 582px;
+
+background: #DCB1B1;
+
+
+/* question 1 box: Rectangle 43 */
+
+position: absolute;
+width: 608px;
+height: 59px;
+left: 35px;
+top: 140px;
+
+background: #DCB1B1;
+
+
+/* stuff goes here */
+
+position: absolute;
+width: 459px;
+height: 334px;
+left: 865px;
+top: 379px;
+
+font-family: Offside;
+font-style: normal;
+font-weight: normal;
+font-size: 50px;
+line-height: 63px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Number of Questions: */
+
+position: absolute;
+width: 492px;
+height: 38px;
+left: 79px;
+top: 149px;
+
+font-family: Offside;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 38px;
+/* identical to box height */
+text-align: center;
+
+color: #000000;
+
+
+
+/* question 2 box: Rectangle 44 */
+
+position: absolute;
+width: 610px;
+height: 59px;
+left: 35px;
+top: 317px;
+
+background: #DCB1B1;
+
+
+/* question 3 box: Rectangle 45 */
+
+position: absolute;
+width: 610px;
+height: 59px;
+left: 35px;
+top: 515px;
+
+background: #DCB1B1;
+
+
+/* Select Category: */
+
+position: absolute;
+width: 350px;
+height: 51px;
+left: 162px;
+top: 330px;
+
+font-family: Offside;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 38px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* popup options (2) */
+
+position: absolute;
+width: 306px;
+height: 62px;
+left: 171px;
+top: 402px;
+
+font-family: Offside;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 38px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* Select Difficulty: */
+
+position: absolute;
+width: 336px;
+height: 62px;
+left: 155px;
+top: 525px;
+
+font-family: Offside;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 38px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* popdown options (3) */
+
+position: absolute;
+width: 354px;
+height: 58px;
+left: 147px;
+top: 603px;
+
+font-family: Offside;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 38px;
+text-align: center;
+
+color: #000000;
+
+
+
+/* question 4 box: Rectangle 47 */
+
+position: absolute;
+width: 608px;
+height: 56px;
+left: 37px;
+top: 713px;
+
+background: #DCB1B1;
+
+
+/* answer 4 box: Rectangle 48 */
+
+position: absolute;
+width: 608px;
+height: 80px;
+left: 35px;
+top: 780px;
+
+background: #DCB1B1;
+
+
+/* design: Ellipse 22 */
+
+position: absolute;
+width: 150px;
+height: 150px;
+left: 540px;
+top: 964px;
+
+background: #FFAC5F;
+
+
+/* popdown optoins (4) */
+
+position: absolute;
+width: 272px;
+height: 38px;
+left: 185px;
+top: 801px;
+
+font-family: Offside;
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 38px;
+/* identical to box height */
+text-align: center;
+
+color: #000000;
+
+
+
+/* design: Ellipse 18 */
+
+position: absolute;
+width: 220px;
+height: 220px;
+left: -65px;
+top: 900px;
+
+background: #F55E5E;
+
+
+/* design: Ellipse 19 */
+
+position: absolute;
+width: 184px;
+height: 184px;
+left: -55px;
+top: 923px;
+
+background: #6479EB;
