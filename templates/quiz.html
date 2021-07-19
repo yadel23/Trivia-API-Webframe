@@ -1,11 +1,62 @@
 <!DOCTYPE html>
 <html>
-   <head>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">      
-   </head>
-   <body>
-      <h1 class = "answers">
-         
+
+<head>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+</head>
+
+<body>
+   <div class="container" id="background">
+      <nav class="top_barBackground">
+         <button class='home_box' type='button'>
+            <a class='home_txt'>Home</a>
+         </button>
+      </nav>
+   </div>
+   <div>
+      <elipse class='question_circle'></elipse>
+      <p class='question_txt'> replace later {{question}}
+      </p>
+   </div>
+   <div>
+      <h1 class='question_box1'>
       </h1>
-   </body>
+      <h1 class='question_box2'>
+      </h1>
+      <h1 class='question_box3'>
+      </h1>
+      <h1 class='question_box4'>
+      </h1>
+      <p class='question_box1_txt'> replace later 1{answer} </p>
+      <p class='question_box2_txt'> replace later 2{answer} </p>
+      <p class='question_box3_txt'> replace later 3{answer} </p>
+      <p class='question_box4_txt'> replace later 4{answer} </p>
+      <h1 class='num_option1'>
+         <h1 class='num_txt1'> 1 </h1>
+      </h1>
+      <h1 class='num_option2'>
+         <h1 class='num_txt2'> 2 </h1>
+      </h1>
+      <h1 class='num_option3'>
+         <h1 class='num_txt3'> 3 </h1>
+      </h1>
+      <h1 class='num_option4'>
+         <h1 class='num_txt4'> 4 </h1>
+      </h1>
+   </div>
+   <div>
+      <button class='next_box' type='button'>
+      </button>
+      <a class='next_txt'> NEXT </a>
+   </div>
+   <div>
+      <ellipse class='outer_ellipse'></ellipse>
+      <ellipse class='inner_ellipse'></ellipse>
+      <ellipse class='regular_ellipse'></ellipse>
+      <ellipse class='half_ellipse'></ellipse>
+      <ellipse class='outer_cut_ellipse'></ellipse>
+      <ellipse class='inner_cut_ellipse'></ellipse>
+   </div>
+</body>
+
 </html>
