@@ -46,9 +46,9 @@ background: #54B8F0;
 .inner_circle_2{
 position: absolute;
 width: 261px;
-height: 261px;
+height: 263px;
 left: 1099px;
-top: 49px;
+top: 48px;
 -webkit-border-radius: 25px;
 -moz-border-radius: 25px;
 border-radius: 50%;
@@ -89,15 +89,14 @@ background: #6479EB;
 .circle_4{
 position: absolute;
 width: 251px;
-height: 248px;
-left: 1296px;
+height: 130px;
+left: 1249px;
 top: 705px;
 -webkit-border-radius: 25px;
 -moz-border-radius: 25px;
-border-radius: 50%;
-
+border-radius: 150px 150px 0 0;
+transform: rotate(-90deg);
 background: #FF5C5C;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 /* center title circle: Ellipse 16 */
