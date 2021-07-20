@@ -1,39 +1,40 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <link rel="stylesheet" href="home.css">
-    </head>
-    <body>
-        <div class = "main_background"> 
-            <ellipse class = "circle_1">
-            </ellipse>
-            <ellipse class = "circle_2">
-            </ellipse>
-            <ellipse class = "inner_circle_2">                       
-            </ellipse>
-            <ellipse class = "circle_3">
-            </ellipse>
-            <ellipse class = "inner_circle_3">
-            </ellipse>
-            <ellipse class = "circle_4">
-            </ellipse>
-            <ellipse class = "main_circle">
-            </ellipse>
-            <div class = "tabs">
-            </div>
-            <button class = "tab_names">
-            </button>
-            <!--- Add names for tabs as well as trivia kings-->
-            <div class = "line1">
-            </div>
-            <div class = "line2">
-            </div>
-            <h1> Trivia<br>
-                Kings </h1>
-            <h2> Info</h2>
-            <h3> Welcome! Let us help you enhance your</h3>
-                <a href="/info" id="text1">KNOWLEDGE!</a>
-            
-        </div>
-    </body>
+
+<head>
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+</head>
+
+<body>
+   <div class="main_background">
+      <ellipse class="circle_1">
+      </ellipse>
+      <ellipse class="circle_2">
+      </ellipse>
+      <ellipse class="inner_circle_2">
+      </ellipse>
+      <ellipse class="circle_3">
+      </ellipse>
+      <ellipse class="inner_circle_3">
+      </ellipse>
+      <ellipse class="circle_4">
+      </ellipse>
+      <ellipse class="main_circle">
+      </ellipse>
+      <div class="tabs">
+      </div>
+      <button class="tab_names">
+      </button>
+      <!--- Add names for tabs as well as trivia kings-->
+      <div class="line1">
+      </div>
+      <div class="line2">
+      </div>
+      <h1> Trivia<br> Kings </h1>
+      <h2> Info</h2>
+      <h3> Welcome! Let us help you enhance your</h3>
+      <a href="/info" id="text1">KNOWLEDGE!</a>
+   </div>
+</body>
+
 </html>
