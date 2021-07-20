@@ -1,13 +1,12 @@
 /* Info Page */
-
-position: relative;
-width: 1440px;
-height: 1024px;
-
-background: #A32626;
+body {
+    background: white;
+    font-family: 'Comic Sans MS', monospace;
+}
 
 
-/* delete, empty: Ellipse 20 */
+
+/* delete, empty: Ellipse 20 
 
 position: absolute;
 visibility: hidden;
@@ -19,7 +18,7 @@ top: 871px;
 background: #FFAC5F;
 
 
-/* delete, empty: Ellipse 21 */
+/* delete, empty: Ellipse 21 
 
 position: absolute;
 visibility: hidden;
@@ -31,7 +30,7 @@ top: 903px;
 background: #8D1A1A;
 
 
-/* background: Rectangle 20 */
+/* background: Rectangle 20 
 
 position: absolute;
 width: 1440px;
@@ -42,61 +41,160 @@ top: 0px;
 background: #6479EB;
 
 
-/* top left corner box: Rectangle 19 */
 
-position: absolute;
-width: 786px;
-height: 103px;
-left: 0px;
-top: 0px;
 
-background: #C67CE9;
 
 
 /* home button: Frame 1 */
 
 /* Auto Layout */
-display: flex;
-flex-direction: column;
-align-items: flex-start;
-padding: 10px;
+#home {
+    background: #6479EB;
+    height: 2rem;
+    width: 8rem;
+    justify-content: center;
+    text-align: center;
+}
+/* top left corner box: Rectangle 19 */
+.navbar {
+    height: 4rem;
+    background: #C67CE9;
+}
 
-position: absolute;
-width: 160px;
-height: 71px;
-left: 25px;
-top: 86px;
+#home_tag {
+    letter-spacing: 0em;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    padding: 2rem;
+}
 
-background: #6479EB;
-transform: matrix(1, 0, 0, -1, 0, 0);
+#left {
+    background-color: #C67CE9;
+    padding-left: 0;
+    padding-right: 0;
+}
+#right {
+    background-color: #DCB1B1;
+    padding-left: 0%;
+    justify-content: center;
+}
+
+#user_input_container {
+    background-color: #6479EB;
+    width: 100%;
+    justify-content: center;
+}
 
 
-/* Home */
+#instructions {
+    background-color: #6479EB;
+    height: 4rem;
+    width: 90%;
+    padding-top: 0;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 30px;
+    line-height: 63px;
+    text-align: center;
+
+    color: #000000;
+
+}
+#empty {
+    height: 4rem;
+    background-color: #DCB1B1;
+}
+/* inner box (instructions/info): Rectangle 39 */
+#stuff {
+    padding-top: 5rem;
+    width: 90%;
+    height: 75%;
+
+    background:  #C67CE9; 
+}
+
+
+label {
+    width: 90%;
+    height: 35px;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 100;
+    text-align: left;
+    background: #DCB1B1;
+    padding: 0.8rem;
+    padding: 0%;
+    justify-content: center;
+}
+
+input {
+    width: 90%;
+    height: 55px;
+    background: #DCB1B1;
+    margin: 1px 0 15px;
+    color: black;
+}
+#category{
+    width: 90%;
+    height: 55px;
+    background: #DCB1B1;
+    margin: 1px 0 20px;
+}
+#user_input {
+    padding: 2rem;
+    padding-left: 0;
+    justify-content: center;
+    font-size: 1rem;
+}
+#form_submit {
+    width: 50%;
+    height: 60px;
+    margin: 10px 7rem 0;
+    background: #DCB1B1;
+}
+
+#left_ellipse {
+    position: absolute;
+    background: #F55E5E;
+    border-radius: 50%;
+    width: 220px;
+    height: 220px;
+}
+#inner_circle {
+    position: absolute;
+    width: 184px;
+    height: 184px;
+    left: -55px;
+    top: 1003px;
+    border-radius: 50%;
+
+    background: #6479EB;
+}
+#right_ellipse {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    background: #FFAC5F;
+}
+/* Home 
 
 position: static;
-width: 140px;
-height: 40px;
+
 left: 10px;
 top: 21px;
 
-font-family: Offside;
-font-style: normal;
-font-weight: normal;
-font-size: 30px;
-line-height: 38px;
-text-align: center;
-
-color: #FFFFFF;
 
 
-/* Inside Auto Layout */
+
+/* Inside Auto Layout 
 flex: none;
 order: 0;
 flex-grow: 0;
 margin: 10px 0px;
 
 
-/* submit box: Rectangle 35 */
+/* submit box: Rectangle 35 
 
 position: absolute;
 width: 160px;
@@ -107,7 +205,7 @@ top: 903px;
 background: #DCB1B1;
 
 
-/* delete, empty: Rectangle 38 */
+/* delete, empty: Rectangle 38 
 
 position: absolute;
 visibility: hidden;
@@ -119,7 +217,7 @@ top: 20px;
 background: #6479EB;
 
 
-/* submit */
+/* submit 
 
 position: absolute;
 width: 108px;
@@ -138,7 +236,7 @@ color: #000000;
 
 
 
-/* right outer box: Rectangle 36 */
+/* right outer box: Rectangle 36 
 
 position: absolute;
 width: 720px;
@@ -149,7 +247,7 @@ top: 0px;
 background: #DCB1B1;
 
 
-/* answer 1 box: Rectangle 37 */
+/* answer 1 box: Rectangle 37  
 
 position: absolute;
 width: 608px;
@@ -160,7 +258,7 @@ top: 207px;
 background: #DCB1B1;
 
 
-/* popup: numbers */
+/* popup: numbers 
 
 position: absolute;
 width: 254px;
@@ -173,44 +271,23 @@ font-style: normal;
 font-weight: normal;
 font-size: 30px;
 line-height: 38px;
-/* identical to box height */
+/* identical to box height 
 text-align: center;
 
 color: #000000;
 
 
 
-/* inner box (instructions/info): Rectangle 39 */
 
-position: absolute;
-width: 610px;
-height: 103px;
-left: 775px;
-top: 0px;
-
-background: #6479EB;
 
 
 /* instructions/info */
 
-position: absolute;
-width: 488px;
-height: 86px;
-left: 836px;
-top: 23px;
-
-font-family: Offside;
-font-style: normal;
-font-weight: normal;
-font-size: 50px;
-line-height: 63px;
-text-align: center;
-
-color: #000000;
 
 
 
-/* inner box (stuff goes here): Rectangle 40 */
+
+/* inner box (stuff goes here): Rectangle 40 
 
 position: absolute;
 width: 610px;
@@ -221,7 +298,7 @@ top: 187px;
 background: #C67CE9;
 
 
-/* answer 2 box: Rectangle 41 */
+/* answer 2 box: Rectangle 41 
 
 position: absolute;
 width: 608px;
@@ -232,7 +309,7 @@ top: 384px;
 background: #DCB1B1;
 
 
-/* answer 3 box: Rectangle 42 */
+/* answer 3 box: Rectangle 42 
 
 position: absolute;
 width: 610px;
@@ -243,7 +320,7 @@ top: 582px;
 background: #DCB1B1;
 
 
-/* question 1 box: Rectangle 43 */
+/* question 1 box: Rectangle 43 
 
 position: absolute;
 width: 608px;
@@ -254,7 +331,7 @@ top: 140px;
 background: #DCB1B1;
 
 
-/* stuff goes here */
+/* stuff goes here 
 
 position: absolute;
 width: 459px;
@@ -273,7 +350,7 @@ color: #000000;
 
 
 
-/* Number of Questions: */
+/* Number of Questions: 
 
 position: absolute;
 width: 492px;
@@ -286,14 +363,14 @@ font-style: normal;
 font-weight: normal;
 font-size: 30px;
 line-height: 38px;
-/* identical to box height */
+/* identical to box height 
 text-align: center;
 
 color: #000000;
 
 
 
-/* question 2 box: Rectangle 44 */
+/* question 2 box: Rectangle 44 
 
 position: absolute;
 width: 610px;
@@ -304,7 +381,7 @@ top: 317px;
 background: #DCB1B1;
 
 
-/* question 3 box: Rectangle 45 */
+/* question 3 box: Rectangle 45 
 
 position: absolute;
 width: 610px;
@@ -315,7 +392,7 @@ top: 515px;
 background: #DCB1B1;
 
 
-/* Select Category: */
+/* Select Category: 
 
 position: absolute;
 width: 350px;
@@ -334,7 +411,7 @@ color: #000000;
 
 
 
-/* popup options (2) */
+/* popup options (2) 
 
 position: absolute;
 width: 306px;
@@ -353,7 +430,7 @@ color: #000000;
 
 
 
-/* Select Difficulty: */
+/* Select Difficulty: 
 
 position: absolute;
 width: 336px;
@@ -372,7 +449,7 @@ color: #000000;
 
 
 
-/* popdown options (3) */
+/* popdown options (3) 
 
 position: absolute;
 width: 354px;
@@ -391,7 +468,7 @@ color: #000000;
 
 
 
-/* question 4 box: Rectangle 47 */
+/* question 4 box: Rectangle 47 
 
 position: absolute;
 width: 608px;
@@ -402,7 +479,7 @@ top: 713px;
 background: #DCB1B1;
 
 
-/* answer 4 box: Rectangle 48 */
+/* answer 4 box: Rectangle 48 
 
 position: absolute;
 width: 608px;
@@ -413,7 +490,7 @@ top: 780px;
 background: #DCB1B1;
 
 
-/* design: Ellipse 22 */
+/* design: Ellipse 22 
 
 position: absolute;
 width: 150px;
@@ -424,7 +501,7 @@ top: 964px;
 background: #FFAC5F;
 
 
-/* popdown optoins (4) */
+/* popdown optoins (4) 
 
 position: absolute;
 width: 272px;
@@ -437,14 +514,14 @@ font-style: normal;
 font-weight: normal;
 font-size: 30px;
 line-height: 38px;
-/* identical to box height */
+/* identical to box height 
 text-align: center;
 
 color: #000000;
 
 
 
-/* design: Ellipse 18 */
+/* design: Ellipse 18 
 
 position: absolute;
 width: 220px;
@@ -455,7 +532,7 @@ top: 900px;
 background: #F55E5E;
 
 
-/* design: Ellipse 19 */
+/* design: Ellipse 19 
 
 position: absolute;
 width: 184px;
@@ -463,4 +540,4 @@ height: 184px;
 left: -55px;
 top: 923px;
 
-background: #6479EB;
+background: #6479EB; */
