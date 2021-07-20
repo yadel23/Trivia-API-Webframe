@@ -9,8 +9,13 @@ def user_input():
     category = request.form.get("category")
     difficulty = request.form.get("difficulty")
     typeQ = request.form.get("type")
+    
+    url = getUrl(amount, category , difficulty, typeQ)
+    Json = getJson(url)
+    correct_answers, final_answers, question_list = toDict(Json)
+    quiz(correct_answers,final_answers,question_list) 
 
-    return amount, category, difficulty, typeQ
+    return quiz(correct_answers,final_answers,question_list)
    
 
 def getUrl(amount, category, difficulty, typeQ):
@@ -57,7 +62,7 @@ def toDict(json_data):
     print('f answers ', final_answers)
     print('c list' , correct_list)
     
-    return correct_list,final_answers,question_list
+    return correct_list, final_answers, question_list
 
 
 @app.route("/")
@@ -70,12 +75,53 @@ def home():
 def info():
     return render_template("info.html")
 
-   
 @app.route("/quiz")
-def quiz(correct_answers, final_answers, question_list):
+def quiz():
+    return render_template("quiz.html")
+
    
+
+def quiz(correct_answers,final_answers,question_list):
+    #redirect("/quiz")
+    didNotPressButton = True  
+    if didNotPressButton:
+        question_type = next(iter(question_list.values()))
+        print(question_type)                     
+        print(next(iter(question_list)))                   
+        question_name = next(iter(question_list))
+
+        if question_type == 'multiple':
+            print('hi')
+            #return redirect('/quiz',  question = question_name, answer1 = final_answers[0][0], answer2 = final_answers[0][1], answer3 = final_answers[0][2], answer4 = final_answers[0][3])
+            
+            return render_template('quiz.html',  question = question_name, answer1 = final_answers[0][0], answer2 = final_answers[0][1], answer3 = final_answers[0][2], answer4 = final_answers[0][3])
+              
+                            
+        elif question_type == 'boolean':
+            return render_template("quiz.html", question = question_name, answer1 = 'True', answer2 = 'False')
+                            
+                          
+      #if next button is pressed              
+
    
-    return render_template("quiz.html", question = question_list[0], answer1 = correct_answers[0], answer2 = 'answer 2', answer3 = 'answer 3', answer4 = 'answer 4')
+#if next button is pressed
+    #iterate through dict 
+    #grab key nad value for each
+    #
+   #if value is boolean  
+      #question = key (display in question)
+      #if T/F two options
+         #return two options disable 3 and 4
+         
+   #elif value is multiple
+      #question = key (display in question)
+      #2D answers - loop through and set for each answer (nested for loop)
+      #
+      #loop and display all 4 options
+    
+
+
+    #return render_template("quiz.html", question = question_list[0], answer1 = correct_answers[0], answer2 = 'answer 2', answer3 = 'answer 3', answer4 = 'answer 4')
     #return render_template("quiz.html", question = 'does this work?', answer1 = 'answer 1', answer2 = 'answer 2', answer3 = 'answer 3', answer4 = 'answer 4')
 
 
@@ -84,8 +130,6 @@ if __name__ == '__main__':
 #     amount, category, difficulty, typeQ = user_input()
 # url = getUrl(str(amount), str(category), str(difficulty), str(typeQ))
 
-    url = getUrl(str(2), 'default_c', 'easy', 'multiple')
-    Json = getJson(url)
-    print(toDict(Json))
-#     questions, correct_answers, incorrect_answers = toDict(url)
+      
+#    questions, correct_answers, incorrect_answers = toDict(url)
     
