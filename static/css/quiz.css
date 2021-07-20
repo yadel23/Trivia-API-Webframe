@@ -1,110 +1,102 @@
-/* Quiz Page */
+/*** Quiz Page ***/
+* {
+  font-family: 'Comic Sans MS', monospace;
+}
 
+#background {
 position: relative;
 width: 1440px;
 height: 1024px;
 
 background: #6479EB;
 
+}
 
 /* top left corner box: Rectangle 29 */
-
+.top_barBackground{
 position: absolute;
-width: 786px;
-height: 103px;
-left: -21px;
-top: -15px;
+width: 765px;
+height: 88px;
+left: 0px;
+top: 0px;
+
 
 background: #C67CE9;
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
+}
+
+/* home box: Rectangle 30 */
+.home_box{
+position: absolute;
+width: 160px;
+height: 71px;
+left: 19px;
+top: 9px;
+
+-webkit-border-radius: 25px;
+-moz-border-radius: 25px;
+border-radius: 25px;
+
+background: #6479EB;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+/* Home */
+.home_txt{
+position: absolute;
+width: 121px;
+height: 45px;
+left: 17px;
+top: 12px;
+
+font-style: normal;
+font-weight: normal;
+font-size: 30px;
+line-height: 38px;
+
+color: #FFFFFF;
+}
 
 /* question circle: Ellipse */
-
+.question_circle{
 position: absolute;
 width: 1063px;
 height: 1063px;
 left: 709px;
 top: -327px;
 
+-webkit-border-radius: 25%;
+-moz-border-radius: 25%;
+border-radius: 50%;
+-ms-border-radius: 50%;
+-o-border-radius: 50%;
+
+
 background: #DCB1B1;
 border: 1px solid #EEB2B2;
 box-sizing: border-box;
 box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 
+}
 
-/* Design: Ellipse 6 */
-
+/* question txt box */
+.question_txt{
 position: absolute;
-width: 122px;
-height: 122px;
-left: 1279px;
-top: 851px;
+width: 615px;
+height: 175px;
+left: 854px;
+top: 173px;
 
-background: #FFAC5F;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+font-style: normal;
+font-weight: normal;
+font-size: 70px;
+line-height: 88px;
 
+color: #000000;
 
-/* design: Ellipse 7 */
-
-position: absolute;
-width: 360px;
-height: 360px;
-left: -127px;
-top: 821px;
-
-background: #84C4F3;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-
-/* design: Ellipse 8 */
-
-position: absolute;
-width: 300px;
-height: 300px;
-left: -97px;
-top: 851px;
-
-background: #6479EB;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-
-/* design: Ellipse 9 */
-
-position: absolute;
-width: 68px;
-height: 66px;
-left: 19px;
-top: 139px;
-
-background: #FCFE87;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-
-/* design: Ellipse 10 */
-
-position: absolute;
-width: 38px;
-height: 40px;
-left: 34px;
-top: 152px;
-
-background: #6479EB;
-
-
-/* Design: Ellipse 11 */
-
-position: absolute;
-width: 120px;
-height: 104px;
-left: 765px;
-top: 1076px;
-
-background: #F55E5E;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-transform: matrix(1, 0, 0, -1, 0, 0);
-
-
+}
+.question_box1{
 /* outer box for #1: Rectangle 21 */
 
 position: absolute;
@@ -116,7 +108,9 @@ top: 237px;
 background: #DCB1B1;
 box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 
+}
 
+.question_box2{
 /* outer box for #2: Rectangle 22 */
 
 position: absolute;
@@ -127,8 +121,9 @@ top: 367px;
 
 background: #DCB1B1;
 box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 
-
+.question_box3{
 /* outer box for #3: Rectangle 23 */
 
 position: absolute;
@@ -139,8 +134,9 @@ top: 497px;
 
 background: #DCB1B1;
 box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 
-
+.question_box4{
 /* outer box for #4: Rectangle 24 */
 
 position: absolute;
@@ -151,10 +147,76 @@ top: 627px;
 
 background: #DCB1B1;
 box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.question_box1_txt{
+/* answer 1 */
+position: absolute;
+width: 384px;
+height: 53px;
+left: 190px;
+top: 275px;
+
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 32px;
+
+color: #000000;
+}
+
+.question_box2_txt{
+/* answer 2 */
+position: absolute;
+width: 350px;
+height: 35px;
+left: 190px;
+top: 398px;
 
 
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 32px;
+
+color: #000000;
+}
+
+.question_box3_txt{
+/* answer 3 */
+position: absolute;
+width: 372px;
+height: 62px;
+left: 190px;
+top: 536px;
+
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 32px;
+
+color: #000000;
+}
+
+.question_box4_txt{
+/* answer 4 */
+position: absolute;
+ width: 354px;
+height: 48px;
+left: 186px;
+top: 660px;
+
+
+font-style: normal;
+font-weight: normal;
+font-size: 25px;
+line-height: 32px;
+
+color: #000000;
+}
+
+.num_option1{
 /* inner box for #1: Rectangle 25 */
-
 position: absolute;
 width: 96px;
 height: 86px;
@@ -163,26 +225,9 @@ top: 243px;
 
 background: #6479EB;
 box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 
-
-/* number option: 1 */
-
-position: absolute;
-width: 84px;
-height: 72px;
-left: 87px;
-top: 243px;
-
-font-family: Offside;
-font-style: normal;
-font-weight: normal;
-font-size: 70px;
-line-height: 88px;
-
-color: #FFFFFF;
-
-
-
+.num_option2{
 /* inner box for #2: Rectangle 26 */
 
 position: absolute;
@@ -193,26 +238,9 @@ top: 373px;
 
 background: #6479EB;
 box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 
-
-/* number option: 2 */
-
-position: absolute;
-width: 74px;
-height: 66px;
-left: 87px;
-top: 373px;
-
-font-family: Offside;
-font-style: normal;
-font-weight: normal;
-font-size: 70px;
-line-height: 88px;
-
-color: #FFFFFF;
-
-
-
+.num_option3{
 /* inner box for #3: Rectangle 27 */
 
 position: absolute;
@@ -223,8 +251,9 @@ top: 503px;
 
 background: #6479EB;
 box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 
-
+.num_option4{
 /* inner box for #4: Rectangle 28 */
 
 position: absolute;
@@ -235,177 +264,79 @@ top: 633px;
 
 background: #6479EB;
 box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
 
 
+
+.num_txt1{
+/* number option: 1 */
+
+position: absolute;
+width: 84px;
+height: 72px;
+left: 87px;
+top: 220px;
+
+font-style: normal;
+font-weight: normal;
+font-size: 70px;
+line-height: 88px;
+
+color: #FFFFFF;
+}
+
+.num_txt2{
+/* number option: 2 */
+
+position: absolute;
+width: 74px;
+height: 66px;
+left: 87px;
+top: 350px;
+
+font-style: normal;
+font-weight: normal;
+font-size: 70px;
+line-height: 88px;
+
+color: #FFFFFF;
+}
+
+.num_txt3{
 /* number option: 3 */
 
 position: absolute;
 width: 61px;
 height: 77px;
 left: 87px;
-top: 497px;
+top: 480px;
 
-font-family: Offside;
 font-style: normal;
 font-weight: normal;
 font-size: 70px;
 line-height: 88px;
 
 color: #FFFFFF;
+}
 
-
-
+.num_txt4{
 /* number option: 4 */
 
 position: absolute;
 width: 49px;
 height: 52px;
 left: 87px;
-top: 633px;
+top: 610px;
 
-font-family: Offside;
 font-style: normal;
 font-weight: normal;
 font-size: 70px;
 line-height: 88px;
 
 color: #FFFFFF;
+}
 
-
-
-/* question txt box */
-
-position: absolute;
-width: 615px;
-height: 175px;
-left: 854px;
-top: 173px;
-
-font-family: Offside;
-font-style: normal;
-font-weight: normal;
-font-size: 70px;
-line-height: 88px;
-
-color: #000000;
-
-
-
-/* answer 1 */
-
-position: absolute;
-width: 384px;
-height: 53px;
-left: 190px;
-top: 275px;
-
-font-family: Offside;
-font-style: normal;
-font-weight: normal;
-font-size: 25px;
-line-height: 32px;
-
-color: #000000;
-
-
-
-/* answer 2 */
-
-position: absolute;
-width: 350px;
-height: 35px;
-left: 190px;
-top: 398px;
-
-font-family: Offside;
-font-style: normal;
-font-weight: normal;
-font-size: 25px;
-line-height: 32px;
-
-color: #000000;
-
-
-
-/* answer 3 */
-
-position: absolute;
-width: 372px;
-height: 62px;
-left: 190px;
-top: 536px;
-
-font-family: Offside;
-font-style: normal;
-font-weight: normal;
-font-size: 25px;
-line-height: 32px;
-
-color: #000000;
-
-
-
-/* answer 4 */
-
-position: absolute;
-width: 354px;
-height: 48px;
-left: 186px;
-top: 660px;
-
-font-family: Offside;
-font-style: normal;
-font-weight: normal;
-font-size: 25px;
-line-height: 32px;
-
-color: #000000;
-
-
-
-/* home box: Rectangle 30 */
-
-position: absolute;
-width: 160px;
-height: 71px;
-left: 19px;
-top: 9px;
-
-background: #6479EB;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-
-/* delete, empty: Rectangle 31 */
-
-position: absolute;
-visibility: hidden;
-width: 160px;
-height: 71px;
-left: 205px;
-top: 9px;
-
-background: #6479EB;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-
-/* Home */
-
-position: absolute;
-width: 121px;
-height: 45px;
-left: 50px;
-top: 25px;
-
-font-family: Offside;
-font-style: normal;
-font-weight: normal;
-font-size: 30px;
-line-height: 38px;
-
-color: #FFFFFF;
-
-
-
+.next_box{
 /* next box: Rectangle 46 */
 
 position: absolute;
@@ -414,18 +345,19 @@ height: 94px;
 left: 328px;
 top: 839px;
 
+
 background: #DCB1B1;
+}
 
-
+.next_txt{
 /* NEXT */
 
 position: absolute;
 width: 199px;
 height: 76px;
 left: 362px;
-top: 851px;
+top: 850px;
 
-font-family: Offside;
 font-style: normal;
 font-weight: normal;
 font-size: 50px;
@@ -433,4 +365,118 @@ line-height: 63px;
 text-align: center;
 
 color: #000000;
+}
 
+.outer_ellipse{
+/* design: Ellipse 9 */
+
+position: absolute;
+width: 68px;
+height: 66px;
+left: 19px;
+top: 139px;
+
+-webkit-border-radius: 25%;
+-moz-border-radius: 25%;
+border-radius: 50%;
+-ms-border-radius: 50%;
+-o-border-radius: 50%;
+
+background: #FCFE87;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.inner_ellipse{
+/* design: Ellipse 10 */
+
+position: absolute;
+width: 38px;
+height: 40px;
+left: 34px;
+top: 152px;
+
+-webkit-border-radius: 25%;
+-moz-border-radius: 25%;
+border-radius: 50%;
+-ms-border-radius: 50%;
+-o-border-radius: 50%;
+
+background: #6479EB;
+}
+
+.regular_ellipse{
+/* Design: Ellipse 6 */
+
+position: absolute;
+width: 122px;
+height: 122px;
+left: 1279px;
+top: 851px;
+
+-webkit-border-radius: 25%;
+-moz-border-radius: 25%;
+border-radius: 50%;
+-ms-border-radius: 50%;
+-o-border-radius: 50%;
+
+background: #FFAC5F;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.half_ellipse{
+/* Design: Ellipse 11 */
+
+position: absolute;
+width: 120px;
+height: 104px;
+left: 765px;
+top: 980px;
+
+-webkit-border-radius: 25%;
+-moz-border-radius: 25%;
+border-radius: 50%;
+-ms-border-radius: 50%;
+-o-border-radius: 50%;
+
+background: #F55E5E;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+transform: matrix(1, 0, 0, -1, 0, 0);
+}
+
+.outer_cut_ellipse{
+/* design: Ellipse 7 */
+
+position: absolute;
+width: 360px;
+height: 360px;
+left: -127px;
+top: 821px;
+
+-webkit-border-radius: 25%;
+-moz-border-radius: 25%;
+border-radius: 50%;
+-ms-border-radius: 50%;
+-o-border-radius: 50%;
+
+background: #84C4F3;
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.inner_cut_ellipse{
+/* design: Ellipse 8 */
+
+position: absolute;
+width: 300px;
+height: 300px;
+left: -97px;
+top: 851px;
+
+-webkit-border-radius: 25%;
+-moz-border-radius: 25%;
+border-radius: 50%;
+-ms-border-radius: 50%;
+-o-border-radius: 50%;
+
+background: #6479EB;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
