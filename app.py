@@ -14,6 +14,7 @@ def user_input():
     Json = getJson(url)
     correct_answers, final_answers, question_list = toDict(Json)
     quiz(correct_answers,final_answers,question_list) 
+    next_question(correct_answers,final_answers,question_list)
 
     return quiz(correct_answers,final_answers,question_list)
    
@@ -100,33 +101,36 @@ def quiz(correct_answers,final_answers,question_list):
         elif question_type == 'boolean':
             return render_template("quiz.html", question = question_name, answer1 = 'True', answer2 = 'False')
                             
-                          
-      #if next button is pressed              
 
+next_que = 1      
+@app.route('/next/question')
+def next_question(correct_answers, final_answers, question_list):
+    question_type = list(question_list.values())[next_que]
+    #print(question_type)  
+    question_name = list(question_list.keys())[next_que]                    
+    #print(question_name) 
    
-#if next button is pressed
-    #iterate through dict 
-    #grab key nad value for each
-    #
-   #if value is boolean  
-      #question = key (display in question)
-      #if T/F two options
-         #return two options disable 3 and 4
-         
-   #elif value is multiple
-      #question = key (display in question)
-      #2D answers - loop through and set for each answer (nested for loop)
-      #
-      #loop and display all 4 options
-    
+    next_que += 1
+      
+    if question_type == 'multiple':
+         return render_template('quiz.html',  question = question_name, answer1 = final_answers[next_que][0], answer2 = final_answers[next_que][1], answer3 = final_answers[next_que][2], 
+                                   answer4 = final_answers[next_que][3])
+              
+                            
+    elif question_type == 'boolean':
+        return render_template("quiz.html", question = question_name, answer1 = 'True', answer2 = 'False')
+      
+   
 
-
-    #return render_template("quiz.html", question = question_list[0], answer1 = correct_answers[0], answer2 = 'answer 2', answer3 = 'answer 3', answer4 = 'answer 4')
-    #return render_template("quiz.html", question = 'does this work?', answer1 = 'answer 1', answer2 = 'answer 2', answer3 = 'answer 3', answer4 = 'answer 4')
-
-
+      
 if __name__ == '__main__':
-    app.run(debug = True, host = '0.0.0.0')
+    #app.run(debug = True, host = '0.0.0.0')
+    
+      
+      
+      
+      
+      
 #     amount, category, difficulty, typeQ = user_input()
 # url = getUrl(str(amount), str(category), str(difficulty), str(typeQ))
 
