@@ -37,7 +37,7 @@
                     <div class="container-fluid" id="user_input_container">
                         <form name="user_input_form" method="POST" action="/user/input" id="user_input">
                             <label>Number of Questions: </label>
-                            <input type="number" step="any" name="amount" data-error="Enter the number of questions from 1-50" placeholder="10" required><br>
+                            <input type="number" step="any" min="1" max="50" name="amount" data-error="Enter the number of questions from 1-50" placeholder="10" required><br>
                             <label>Select Category: </label>
                             <select name="category" id="category">
                                 <option value="default">Any Category</option>
@@ -88,7 +88,29 @@
                 <div class="col-lg-6" id="right">
                     <div class="container-fluid" id="instructions">instructions/info</div>
                     <div class="container-fluid" id="empty"></div>
-                    <div class="container-fluid" id="stuff"> Stuff Goes here</div>
+                    <div class="container-fluid" id="stuff">
+                        Hello, Today you are going to take a quiz to furthur your knowledge!<br>
+                        <br>
+                        1. Pick the amount of questions you want for your quiz.
+                        <br>
+                        <br>
+                        2. Select the catagory of choice for your quiz.
+                        <br>
+                        <br>
+                        3. Select the difficulty of choice for your quiz.
+                        <br>
+                        <br>
+                        4. Select the type of quiz you want to do.
+                        <br>
+                        <br>
+                        5. Click on submit.
+                        <br>
+                        <br>
+                        6. Once you submit your quiz choices, you will be redirected to take your quiz.
+                        <br>
+                        <br>
+                        7. Once you are done with your quiz and submit it, you will be redirected to see your score.
+                    </div>
                 </div>
             </div>
         </div>
