@@ -1,88 +1,75 @@
 /*** Quiz Page ***/
-* {
+body {
   font-family: 'Comic Sans MS', monospace;
-}
-
-#background {
-position: relative;
-width: 1440px;
-height: 1024px;
-
-background: #6479EB;
-
-}
-
-/* top left corner box: Rectangle 29 */
-.top_barBackground{
-position: absolute;
-width: 765px;
-height: 88px;
-left: 0px;
-top: 0px;
-
-
-background: #C67CE9;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-}
-
-/* home box: Rectangle 30 */
-.home_box{
-position: absolute;
-width: 160px;
-height: 71px;
-left: 19px;
-top: 9px;
-
--webkit-border-radius: 25px;
--moz-border-radius: 25px;
-border-radius: 25px;
-
-background: #6479EB;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background-color: #6479EB;
 }
 
 /* Home */
-.home_txt{
-position: absolute;
-width: 121px;
-height: 45px;
-left: 17px;
-top: 12px;
-
-font-style: normal;
-font-weight: normal;
-font-size: 30px;
-line-height: 38px;
-
-color: #FFFFFF;
+#quiz_page {
+  max-height: 43.1rem;
+  width: 100%;
+  padding-left: 0%;
+}
+#home {
+  background: #6479EB;
+  height: 3.2rem;
+  width: 8rem;
+  justify-content: center;
+  text-align: center;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+/* top left corner box: Rectangle 19 */
+.navbar {
+  height: 5rem;
+  background: #C67CE9
+}
+#answer_box {
+  padding: 5rem;
+}
+#home_tag {
+  letter-spacing: 0em;
+  font-size: 1.7rem;
+  text-align: center;
+  color: white;
+  padding: 2rem;
+}
+#home:hover {
+  background-color: #FFAC5F;
+  cursor: pointer;
 }
 
+#home_tag:hover {
+  color: black;
+}
+  
+input {
+  display: none;
+}
 /* question circle: Ellipse */
 .question_circle{
-position: absolute;
-width: 1063px;
-height: 1063px;
-left: 709px;
-top: -327px;
-
--webkit-border-radius: 25%;
--moz-border-radius: 25%;
-border-radius: 50%;
--ms-border-radius: 50%;
--o-border-radius: 50%;
-
-
-background: #DCB1B1;
-border: 1px solid #EEB2B2;
-box-sizing: border-box;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-
+  position: fixed;
+  width: 846px;
+  height: 936px;
+  left: 864px;
+  top: -330px;
+  -webkit-border-radius: 25%;
+  -moz-border-radius: 25%;
+  border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background: #DCB1B1;
+  border: 1px solid #EEB2B2;
+  box-sizing: border-box;
+  box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
 }
+
 
 /* question txt box */
 .question_txt{
-position: absolute;
+position: fixed;
 width: 615px;
 height: 175px;
 left: 854px;
@@ -96,387 +83,183 @@ line-height: 88px;
 color: #000000;
 
 }
-.question_box1{
+#answer1{
 /* outer box for #1: Rectangle 21 */
+  width: 544px;
+  height: 98px;
 
-position: absolute;
-width: 544px;
-height: 98px;
-left: 51px;
-top: 237px;
 
-background: #DCB1B1;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #DCB1B1;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 
 }
 
-.question_box2{
+#answer2{
 /* outer box for #2: Rectangle 22 */
+  width: 544px;
+  height: 98px;
 
-position: absolute;
-width: 544px;
-height: 98px;
-left: 51px;
-top: 367px;
 
-background: #DCB1B1;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #DCB1B1;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.question_box3{
+#answer3{
 /* outer box for #3: Rectangle 23 */
+  width: 544px;
+  height: 98px;
 
-position: absolute;
-width: 544px;
-height: 98px;
-left: 51px;
-top: 497px;
 
-background: #DCB1B1;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #DCB1B1;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.question_box4{
+#answer4{
 /* outer box for #4: Rectangle 24 */
+  width: 544px;
+  height: 98px;
 
-position: absolute;
-width: 544px;
-height: 98px;
-left: 51px;
-top: 627px;
 
-background: #DCB1B1;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #DCB1B1;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.question_box1_txt{
-/* answer 1 */
-position: absolute;
-width: 384px;
-height: 53px;
-left: 190px;
-top: 275px;
-
-font-style: normal;
-font-weight: normal;
-font-size: 25px;
-line-height: 32px;
-
-color: #000000;
+#form_submit {
+  width: 40%;
+  height: 70px;
+  margin: 10px 7rem 0;
+  background: #DCB1B1;
 }
 
-.question_box2_txt{
-/* answer 2 */
-position: absolute;
-width: 350px;
-height: 35px;
-left: 190px;
-top: 398px;
-
-
-font-style: normal;
-font-weight: normal;
-font-size: 25px;
-line-height: 32px;
-
-color: #000000;
-}
-
-.question_box3_txt{
-/* answer 3 */
-position: absolute;
-width: 372px;
-height: 62px;
-left: 190px;
-top: 536px;
-
-font-style: normal;
-font-weight: normal;
-font-size: 25px;
-line-height: 32px;
-
-color: #000000;
-}
-
-.question_box4_txt{
-/* answer 4 */
-position: absolute;
- width: 354px;
-height: 48px;
-left: 186px;
-top: 660px;
-
-
-font-style: normal;
-font-weight: normal;
-font-size: 25px;
-line-height: 32px;
-
-color: #000000;
-}
-
-.num_option1{
+label {
 /* inner box for #1: Rectangle 25 */
-position: absolute;
-width: 96px;
-height: 86px;
-left: 62px;
-top: 243px;
-
-background: #6479EB;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #6479EB;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 84px;
+  height: 72px;
+  font-style: normal;
+  font-weight: normal;
+  color: #000000;
+  font-size: 40px;
 }
 
-.num_option2{
-/* inner box for #2: Rectangle 26 */
-
-position: absolute;
-width: 96px;
-height: 86px;
-left: 62px;
-top: 373px;
-
-background: #6479EB;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+#container {
+  width: 2rem;
 }
 
-.num_option3{
-/* inner box for #3: Rectangle 27 */
+h1 {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 70px;
 
-position: absolute;
-width: 96px;
-height: 86px;
-left: 62px;
-top: 503px;
+  color: #FFFFFF;
 
-background: #6479EB;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.num_option4{
-/* inner box for #4: Rectangle 28 */
-
-position: absolute;
-width: 96px;
-height: 86px;
-left: 62px;
-top: 633px;
-
-background: #6479EB;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-
-
-.num_txt1{
-/* number option: 1 */
-
-position: absolute;
-width: 84px;
-height: 72px;
-left: 87px;
-top: 220px;
-
-font-style: normal;
-font-weight: normal;
-font-size: 70px;
-line-height: 88px;
-
-color: #FFFFFF;
-}
-
-.num_txt2{
-/* number option: 2 */
-
-position: absolute;
-width: 74px;
-height: 66px;
-left: 87px;
-top: 350px;
-
-font-style: normal;
-font-weight: normal;
-font-size: 70px;
-line-height: 88px;
-
-color: #FFFFFF;
-}
-
-.num_txt3{
-/* number option: 3 */
-
-position: absolute;
-width: 61px;
-height: 77px;
-left: 87px;
-top: 480px;
-
-font-style: normal;
-font-weight: normal;
-font-size: 70px;
-line-height: 88px;
-
-color: #FFFFFF;
-}
-
-.num_txt4{
-/* number option: 4 */
-
-position: absolute;
-width: 49px;
-height: 52px;
-left: 87px;
-top: 610px;
-
-font-style: normal;
-font-weight: normal;
-font-size: 70px;
-line-height: 88px;
-
-color: #FFFFFF;
-}
-
-.next_box{
-/* next box: Rectangle 46 */
-
-position: absolute;
-width: 267px;
-height: 94px;
-left: 328px;
-top: 839px;
-
-
-background: #DCB1B1;
-}
-
-.next_txt{
-/* NEXT */
-
-position: absolute;
-width: 199px;
-height: 76px;
-left: 362px;
-top: 850px;
-
-font-style: normal;
-font-weight: normal;
-font-size: 50px;
-line-height: 63px;
-text-align: center;
-
-color: #000000;
 }
 
 .outer_ellipse{
 /* design: Ellipse 9 */
+  position: fixed;
+  width: 68px;
+  height: 66px;
+  left: 19px;
+  top: 139px;
 
-position: absolute;
-width: 68px;
-height: 66px;
-left: 19px;
-top: 139px;
+  -webkit-border-radius: 25%;
+  -moz-border-radius: 25%;
+  border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 
--webkit-border-radius: 25%;
--moz-border-radius: 25%;
-border-radius: 50%;
--ms-border-radius: 50%;
--o-border-radius: 50%;
-
-background: #FCFE87;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #FCFE87;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .inner_ellipse{
 /* design: Ellipse 10 */
+  position: fixed;
+  width: 38px;
+  height: 40px;
+  left: 34px;
+  top: 152px;
 
-position: absolute;
-width: 38px;
-height: 40px;
-left: 34px;
-top: 152px;
+  -webkit-border-radius: 25%;
+  -moz-border-radius: 25%;
+  border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 
--webkit-border-radius: 25%;
--moz-border-radius: 25%;
-border-radius: 50%;
--ms-border-radius: 50%;
--o-border-radius: 50%;
-
-background: #6479EB;
+  background: #6479EB;
 }
 
 .regular_ellipse{
 /* Design: Ellipse 6 */
+  position: fixed;
+  width: 122px;
+  height: 122px;
+  left: 1279px;
+  top: 851px;
 
-position: absolute;
-width: 122px;
-height: 122px;
-left: 1279px;
-top: 851px;
+  -webkit-border-radius: 25%;
+  -moz-border-radius: 25%;
+  border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 
--webkit-border-radius: 25%;
--moz-border-radius: 25%;
-border-radius: 50%;
--ms-border-radius: 50%;
--o-border-radius: 50%;
-
-background: #FFAC5F;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #FFAC5F;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .half_ellipse{
 /* Design: Ellipse 11 */
+  position: fixed;
+  width: 120px;
+  height: 104px;
+  left: 765px;
+  top: 980px;
 
-position: absolute;
-width: 120px;
-height: 104px;
-left: 765px;
-top: 980px;
+  -webkit-border-radius: 25%;
+  -moz-border-radius: 25%;
+  border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 
--webkit-border-radius: 25%;
--moz-border-radius: 25%;
-border-radius: 50%;
--ms-border-radius: 50%;
--o-border-radius: 50%;
-
-background: #F55E5E;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-transform: matrix(1, 0, 0, -1, 0, 0);
+  background: #F55E5E;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transform: matrix(1, 0, 0, -1, 0, 0);
 }
 
 .outer_cut_ellipse{
 /* design: Ellipse 7 */
+  position: fixed;
+  width: 360px;
+  height: 360px;
+  left: -127px;
+  top: 821px;
 
-position: absolute;
-width: 360px;
-height: 360px;
-left: -127px;
-top: 821px;
+  -webkit-border-radius: 25%;
+  -moz-border-radius: 25%;
+  border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 
--webkit-border-radius: 25%;
--moz-border-radius: 25%;
-border-radius: 50%;
--ms-border-radius: 50%;
--o-border-radius: 50%;
-
-background: #84C4F3;
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #84C4F3;
+  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .inner_cut_ellipse{
 /* design: Ellipse 8 */
+  position: fixed;
+  width: 300px;
+  height: 300px;
+  left: -97px;
+  top: 851px;
 
-position: absolute;
-width: 300px;
-height: 300px;
-left: -97px;
-top: 851px;
+  -webkit-border-radius: 25%;
+  -moz-border-radius: 25%;
+  border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 
--webkit-border-radius: 25%;
--moz-border-radius: 25%;
-border-radius: 50%;
--ms-border-radius: 50%;
--o-border-radius: 50%;
-
-background: #6479EB;
-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  background: #6479EB;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }

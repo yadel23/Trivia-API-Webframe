@@ -207,7 +207,6 @@ h3{
 
 #text1{
     position: fixed;
-    width: 710px;
     height: 124px;
     left: 661px;
     top: 584px;
@@ -220,4 +219,8 @@ h3{
     text-align: center;
     color: #DCB1B1;
 
+}
+
+#text1:hover {
+    color: #FF5C5C;
 }
