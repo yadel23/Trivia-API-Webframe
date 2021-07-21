@@ -27,6 +27,16 @@
 
       <!-- Custom styles for this template -->
       <link rel="stylesheet" href="{{ url_for('static',    filename='css/quiz.css') }}">
+      <script>
+         $(document).ready(function(){
+            $("form").submit(function(){
+               if ($('input:checkbox').filter(':checked').length < 1){
+                  alert("Please Choose an answer");
+                  return false;
+               }
+            });
+         });
+      </script>
   </head>
 
    <body>
