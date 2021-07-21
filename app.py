@@ -128,8 +128,8 @@ def next_question():
 
     answer = request.form.get("answers")
     
-    if(final_answers[next_que][int(answer)] == correct_answers[next_que]): 
-        score+=1
+    #if(final_answers[next_que][int(answer)] == correct_answers[next_que]): 
+        #score+=1
 
     next_que += 1
     question_type = list(question_list.values())[next_que]
@@ -144,9 +144,9 @@ def next_question():
    
       
     if question_type == 'multiple':
-        if int(next_que + 1) > int(amount):
+        if int(next_que + 1) >= int(amount):
             print('\n\n\nLAST QUESTION\n\n\n\n')
-            
+            return '<script>window.alert("You are done")</script>'
         else:
             print(final_answers)
             return render_template('quiz.html',  question = str(next_que + 1) + ") "+ html.unescape(question_name), answer1 = html.unescape(final_answers[next_que][0]), answer2 = html.unescape(final_answers[next_que][1]), answer3 = html.unescape(final_answers[next_que][2]), 
@@ -154,9 +154,9 @@ def next_question():
               
                             
     if question_type == 'boolean':   
-        if int(next_que + 1) > int(amount):
+        if int(next_que + 1) >= int(amount):
             print('\n\n\nLAST QUESTION\n\n\n\n')
-            
+            return '<script>window.alert("You are done")</script>'
         else:
             print(final_answers)
             return render_template("quiz.html", question = str(next_que + 1) + ") "+ html.unescape(question_name), answer1 = 'True', answer2 = 'False')
