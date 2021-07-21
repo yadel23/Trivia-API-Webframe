@@ -118,6 +118,7 @@ def quiz(correct_answers,final_answers,question_list):
                             
 
 next_que = 0
+score = 0
 @app.route('/next/question', methods = ["POST"])
 def next_question():
     global next_que
@@ -125,15 +126,24 @@ def next_question():
     global correct_answers
     global final_answers 
     global amount
+    global score
 
     answer = request.form.get("answers")
     
-    #if(final_answers[next_que][int(answer)] == correct_answers[next_que]): 
-        #score+=1
+    print('outside', final_answers[next_que][int(answer)])
+    print('outside', correct_answers[next_que])
+    if(final_answers[next_que][int(answer)] == correct_answers[next_que]): 
+        print(final_answers[next_que][int(answer)])
+        print(correct_answers[next_que])
+        score+=1
 
+    if int(next_que + 1) == int(amount):
+        print('\n\n\nLAST QUESTION\n\n\n\n')
+        #return '<script>window.alert("You are done, score is "){score}</script>'
+        print(score)
+        return home()
     next_que += 1
     question_type = list(question_list.values())[next_que]
-    #print('question type', question_type)
     question_name = list(question_list.keys())[next_que]                    
     #print(question_name) 
 
@@ -141,25 +151,17 @@ def next_question():
     print(next_que)
     print('AMT: ', amount)
     
-   
+    
       
     if question_type == 'multiple':
-        if int(next_que + 1) >= int(amount):
-            print('\n\n\nLAST QUESTION\n\n\n\n')
-            return '<script>window.alert("You are done")</script>'
-        else:
-            print(final_answers)
-            return render_template('quiz.html',  question = str(next_que + 1) + ") "+ html.unescape(question_name), answer1 = html.unescape(final_answers[next_que][0]), answer2 = html.unescape(final_answers[next_que][1]), answer3 = html.unescape(final_answers[next_que][2]), 
+        print(final_answers)
+        return render_template('quiz.html',  question = str(next_que + 1) + ") "+ html.unescape(question_name), answer1 = html.unescape(final_answers[next_que][0]), answer2 = html.unescape(final_answers[next_que][1]), answer3 = html.unescape(final_answers[next_que][2]), 
                                    answer4 = html.unescape(final_answers[next_que][3]))
               
                             
     if question_type == 'boolean':   
-        if int(next_que + 1) >= int(amount):
-            print('\n\n\nLAST QUESTION\n\n\n\n')
-            return '<script>window.alert("You are done")</script>'
-        else:
-            print(final_answers)
-            return render_template("quiz.html", question = str(next_que + 1) + ") "+ html.unescape(question_name), answer1 = 'True', answer2 = 'False')
+        print(final_answers)
+        return render_template("quiz.html", question = str(next_que + 1) + ") "+ html.unescape(question_name), answer1 = 'True', answer2 = 'False')
 
       
    
