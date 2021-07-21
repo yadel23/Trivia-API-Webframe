@@ -144,7 +144,6 @@ def next_question():
         return home()
     next_que += 1
     question_type = list(question_list.values())[next_que]
-    #print('question type', question_type)
     question_name = list(question_list.keys())[next_que]                    
     #print(question_name) 
 
