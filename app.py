@@ -3,6 +3,7 @@ import requests, random
 app = Flask(__name__)
 
 
+app.config['SECRET_KEY'] = '51'
 
 @app.route("/quiz")
 def quiz():
@@ -18,8 +19,13 @@ def user_input():
     url = getUrl(amount, category , difficulty, typeQ)
     Json = getJson(url)
     correct_answers, final_answers, question_list = toDict(Json)
-    quiz(correct_answers,final_answers,question_list) 
-    next_question(correct_answers,final_answers,question_list)
+    session['correct_answers'] = correct_answers
+    session["final_answers"] = final_answers
+    session["question_list"] = question_list
+    next_que = [0]  
+    session["next_que"] = next_que
+    #quiz(correct_answers,final_answers,question_list) 
+    #next_question(correct_answers,final_answers,question_list)
 
     return quiz(correct_answers,final_answers,question_list)
    
@@ -86,12 +92,6 @@ def info():
     return render_template("info.html")
 
 
-@app.route("/next/question", methods = ["POST"]) 
-def next_question():
-    answer = request.form.get("answers")
-    print(answer)
-    return answer
-
 
 def quiz(correct_answers,final_answers,question_list):
     #redirect("/quiz")
@@ -101,41 +101,51 @@ def quiz(correct_answers,final_answers,question_list):
         print(question_type)                     
         print(next(iter(question_list)))                   
         question_name = next(iter(question_list))
-
+    
         if question_type == 'multiple':
             print('hi')
             #return redirect('/quiz',  question = question_name, answer1 = final_answers[0][0], answer2 = final_answers[0][1], answer3 = final_answers[0][2], answer4 = final_answers[0][3])
             
-            return render_template('quiz.html',  question = question_name, answer1 = final_answers[0][0], answer2 = final_answers[0][1], answer3 = final_answers[0][2], answer4 = final_answers[0][3])
+            return render_template('quiz.html', question = question_name, answer1 = final_answers[0][0], answer2 = final_answers[0][1], answer3 = final_answers[0][2], answer4 = final_answers[0][3])
               
                             
         elif question_type == 'boolean':
             return render_template("quiz.html", question = question_name, answer1 = 'True', answer2 = 'False')
+    return correct_answers, final_answers, question_list
                             
 
-next_que = 1      
-@app.route('/next/question')
-def next_question(correct_answers, final_answers, question_list):
+next_que = 0
+@app.route('/next/question', methods = ["POST"])
+def next_question():
+    global next_que
+    correct_answers = session.get('correct_answers', None)
+    final_answers = session.get('final_answers', None)
+    print(final_answers)
+    question_list = session.get('question_list', None)
+    print(question_list)
     question_type = list(question_list.values())[next_que]
     #print(question_type)  
     question_name = list(question_list.keys())[next_que]                    
     #print(question_name) 
-   
+
     next_que += 1
+    print(next_que)
       
     if question_type == 'multiple':
-         return render_template('quiz.html',  question = question_name, answer1 = final_answers[next_que][0], answer2 = final_answers[next_que][1], answer3 = final_answers[next_que][2], 
+        return render_template('quiz.html',  question = question_name, answer1 = final_answers[next_que][0], answer2 = final_answers[next_que][1], answer3 = final_answers[next_que][2], 
                                    answer4 = final_answers[next_que][3])
               
                             
     elif question_type == 'boolean':
+        
         return render_template("quiz.html", question = question_name, answer1 = 'True', answer2 = 'False')
+
       
    
 
       
 if __name__ == '__main__':
-    #app.run(debug = True, host = '0.0.0.0')
+    app.run(debug = True)
     
       
       
