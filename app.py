@@ -1,5 +1,5 @@
 from flask import Flask, render_template, session, redirect, url_for, jsonify, request
-import requests, random
+import requests, random, html
 app = Flask(__name__)
 
 
@@ -9,8 +9,13 @@ app.config['SECRET_KEY'] = '51'
 def quiz():
     return render_template("quiz.html")
 
+question_list = []
 @app.route("/user/input", methods = ["POST"])
 def user_input():
+    global question_list
+    global correct_answers
+    global final_answers
+    global amount
     amount = request.form.get("amount")
     category = request.form.get("category")
     difficulty = request.form.get("difficulty")
@@ -19,11 +24,15 @@ def user_input():
     url = getUrl(amount, category , difficulty, typeQ)
     Json = getJson(url)
     correct_answers, final_answers, question_list = toDict(Json)
-    session['correct_answers'] = correct_answers
-    session["final_answers"] = final_answers
-    session["question_list"] = question_list
-    next_que = [0]  
-    session["next_que"] = next_que
+    
+    #session['correct_answers'] = correct_answers
+    #session["final_answers"] = final_answers
+    #session["question_list"] = question_list
+    #print('INITIAL LIST: ', question_list)
+    
+
+    #next_que = [0]  
+   # session["next_que"] = next_que
     #quiz(correct_answers,final_answers,question_list) 
     #next_question(correct_answers,final_answers,question_list)
 
@@ -33,7 +42,7 @@ def user_input():
 def getUrl(amount, category, difficulty, typeQ):
     Base_url = 'https://opentdb.com/api.php?amount=' + str(amount)
     final_url = Base_url
-   #category
+   #categoryA
     if category != 'default_c':
         final_url =final_url + '&category=' + str(category) 
       
@@ -71,8 +80,8 @@ def toDict(json_data):
         random.shuffle(answers)
         final_answers.append(answers)
     print('q list ', question_list)
-    print('f answers ', final_answers)
-    print('c list' , correct_list)
+   # print('f answers ', final_answers)
+    #print('c list' , correct_list)
     
     return correct_list, final_answers, question_list
 
@@ -95,66 +104,68 @@ def info():
 
 def quiz(correct_answers,final_answers,question_list):
     #redirect("/quiz")
-    didNotPressButton = True  
-    if didNotPressButton:
-        question_type = next(iter(question_list.values()))
-        print(question_type)                     
-        print(next(iter(question_list)))                   
-        question_name = next(iter(question_list))
+    question_type = list(question_list.values())[0]
+        #print(question_type)                     
+       # print(next(iter(question_list)))                   
+    question_name = list(question_list.keys())[0]                    
     
-        if question_type == 'multiple':
-            print('hi')
-            #return redirect('/quiz',  question = question_name, answer1 = final_answers[0][0], answer2 = final_answers[0][1], answer3 = final_answers[0][2], answer4 = final_answers[0][3])
-            
-            return render_template('quiz.html', question = question_name, answer1 = final_answers[0][0], answer2 = final_answers[0][1], answer3 = final_answers[0][2], answer4 = final_answers[0][3])
+    if question_type == 'multiple':            
+        return render_template('quiz.html', question = '1) ' + html.unescape(question_name), answer1 = html.unescape(final_answers[0][0]), answer2 = html.unescape(final_answers[0][1]), answer3 = html.unescape(final_answers[0][2]), answer4 = html.unescape(final_answers[0][3]))
               
                             
-        elif question_type == 'boolean':
-            return render_template("quiz.html", question = question_name, answer1 = 'True', answer2 = 'False')
-    return correct_answers, final_answers, question_list
+    if question_type == 'boolean':
+        return render_template("quiz.html", question = '1) ' + html.unescape(question_name), answer1 = 'True', answer2 = 'False')
                             
 
 next_que = 0
 @app.route('/next/question', methods = ["POST"])
 def next_question():
     global next_que
-    correct_answers = session.get('correct_answers', None)
-    final_answers = session.get('final_answers', None)
-    print(final_answers)
-    question_list = session.get('question_list', None)
-    print(question_list)
+    global question_list
+    global correct_answers
+    global final_answers 
+    global amount
+
+    answer = request.form.get("answers")
+    
+    if(final_answers[next_que][int(answer)] == correct_answers[next_que]): 
+        score+=1
+
+    next_que += 1
     question_type = list(question_list.values())[next_que]
-    #print(question_type)  
+    #print('question type', question_type)
     question_name = list(question_list.keys())[next_que]                    
     #print(question_name) 
 
-    next_que += 1
+    
     print(next_que)
+    print('AMT: ', amount)
+    
+   
       
     if question_type == 'multiple':
-        return render_template('quiz.html',  question = question_name, answer1 = final_answers[next_que][0], answer2 = final_answers[next_que][1], answer3 = final_answers[next_que][2], 
-                                   answer4 = final_answers[next_que][3])
+        if int(next_que + 1) > int(amount):
+            print('\n\n\nLAST QUESTION\n\n\n\n')
+            
+        else:
+            print(final_answers)
+            return render_template('quiz.html',  question = str(next_que + 1) + ") "+ html.unescape(question_name), answer1 = html.unescape(final_answers[next_que][0]), answer2 = html.unescape(final_answers[next_que][1]), answer3 = html.unescape(final_answers[next_que][2]), 
+                                   answer4 = html.unescape(final_answers[next_que][3]))
               
                             
-    elif question_type == 'boolean':
-        
-        return render_template("quiz.html", question = question_name, answer1 = 'True', answer2 = 'False')
+    if question_type == 'boolean':   
+        if int(next_que + 1) > int(amount):
+            print('\n\n\nLAST QUESTION\n\n\n\n')
+            
+        else:
+            print(final_answers)
+            return render_template("quiz.html", question = str(next_que + 1) + ") "+ html.unescape(question_name), answer1 = 'True', answer2 = 'False')
 
       
    
 
       
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(debug = True, host="0.0.0.0")
     
-      
-      
-      
-      
-      
-#     amount, category, difficulty, typeQ = user_input()
-# url = getUrl(str(amount), str(category), str(difficulty), str(typeQ))
-
-      
-#    questions, correct_answers, incorrect_answers = toDict(url)
     
