@@ -8,7 +8,7 @@
       <meta name="author" content="">
       <link rel="icon" href="../../../../favicon.ico">
 
-      <title>Home Page</title>
+      <title>Quiz Page</title>
 
       <!-- Bootstrap core CSS -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -35,44 +35,45 @@
             <div id="home"><a href="/home" id="home_tag">Home</a></div>
         </div>
          <div>
-            <elipse class='question_circle'></elipse>
-            <p class='question_txt'>
-               {{ question }}
-            </p>
+            <elipse class='question_circle'>
+               <p class='question_txt'>
+                  {{ question }}
+               </p>
+            </elipse>
          </div>
          <div class="container-fluid" id="answer_container">
             <form name="answer_form" method="POST" action="/next/question" id="answer_box">
                <input type="checkbox" id="answer1" name="answers" value="0">
                <label for="answer1" id="answer1">
-                  <div class="container" id="container">
-                     <h1>1</h1>
-                  </div>
                   {{ answer1 }} 
                </label><br>
+               <div class="container" id="container">
+                  <h1>1</h1>
+               </div>
    
                <input type="checkbox" id="answer2" name="answers" value="1">
                <label for="answer2" id="answer2"> 
-                  <div class="container" id="container">
-                     <h1>2</h1>
-                  </div>
                   {{ answer2 }}
                </label><br>
+               <div class="container" id="container">
+                  <h1>2</h1>
+               </div>
    
                <input type="checkbox" id="answer3" name="answers" value="2">
                <label for="answer3" id="answer3"> 
-                  <div class="container" id="container">
-                     <h1>3</h1>
-                  </div>
                   {{ answer3 }}
                </label><br>
+               <div class="container" id="container">
+                  <h1>3</h1>
+               </div>
    
                <input type="checkbox" id="answer4" name="answers" value="3">
                <label for="answer4" id="answer4">
-                  <div class="container" id="container">
-                     <h1>4</h1>
-                  </div>
                   {{ answer4 }}
                </label><br>
+               <div class="container" id="container">
+                  <h1>4</h1>
+               </div>
    
                <button type="submit" id="form_submit">NEXT</button>
             </form>

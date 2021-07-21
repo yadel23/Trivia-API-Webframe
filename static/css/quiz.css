@@ -27,7 +27,8 @@ body {
   background: #C67CE9
 }
 #answer_box {
-  padding: 5rem;
+  padding: 6rem;
+  padding-left: 41px
 }
 #home_tag {
   letter-spacing: 0em;
@@ -51,10 +52,10 @@ input {
 /* question circle: Ellipse */
 .question_circle{
   position: fixed;
-  width: 846px;
-  height: 936px;
-  left: 864px;
-  top: -330px;
+  width: 64rem;
+  height: 64rem;
+  left: 780px;
+  top: -473px;
   -webkit-border-radius: 25%;
   -moz-border-radius: 25%;
   border-radius: 50%;
@@ -69,109 +70,80 @@ input {
 
 /* question txt box */
 .question_txt{
-position: fixed;
-width: 615px;
-height: 175px;
-left: 854px;
-top: 173px;
+  position: fixed;
+  width: 615px;
+  height: 175px;
+  left: 922px;
+  top: 92px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 56px;
+  color: #000000;
 
-font-style: normal;
-font-weight: normal;
-font-size: 70px;
-line-height: 88px;
-
-color: #000000;
-
-}
-#answer1{
-/* outer box for #1: Rectangle 21 */
-  width: 544px;
-  height: 98px;
-
-
-  background: #DCB1B1;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-}
-
-#answer2{
-/* outer box for #2: Rectangle 22 */
-  width: 544px;
-  height: 98px;
-
-
-  background: #DCB1B1;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-#answer3{
-/* outer box for #3: Rectangle 23 */
-  width: 544px;
-  height: 98px;
-
-
-  background: #DCB1B1;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-#answer4{
-/* outer box for #4: Rectangle 24 */
-  width: 544px;
-  height: 98px;
-
-
-  background: #DCB1B1;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #form_submit {
-  width: 40%;
-  height: 70px;
-  margin: 10px 7rem 0;
+  position: fixed;
+  left: 317px;
+  width: 13%;
+  height: 87px;
+  margin: 18px 7rem 0;
   background: #DCB1B1;
+}
+#form_submit:hover {
+  cursor: pointer;
+  background-color: #FCFE87;
 }
 
 label {
-/* inner box for #1: Rectangle 25 */
-  background: #6479EB;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-  width: 84px;
-  height: 72px;
+  /* inner box for #1: Rectangle 25 */
+  box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+  width: 574px;
+  height: 70px;
   font-style: normal;
   font-weight: normal;
   color: #000000;
-  font-size: 40px;
+  font-size: 20px;
+  background: #DCB1B1;
+  padding-left: 6.5rem;
+  justify-content: center;
+  line-height: 4rem;
+  margin-bottom: -24px;
 }
 
 #container {
-  width: 2rem;
+  background: #6479EB;
+  width: 58px;
+  height: 57px;
+  position: relative;
+  top: -39.2px;
+  right: 641px;
 }
 
 h1 {
   font-style: normal;
   font-weight: normal;
-  font-size: 70px;
-
+  font-size: 52px;
   color: #FFFFFF;
 
 }
 
 .outer_ellipse{
-/* design: Ellipse 9 */
+  /* design: Ellipse 9 */
   position: fixed;
   width: 68px;
   height: 66px;
   left: 19px;
-  top: 139px;
-
+  top: 92px;
   -webkit-border-radius: 25%;
   -moz-border-radius: 25%;
   border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-
   background: #FCFE87;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
+
 }
 
 .inner_ellipse{
@@ -180,33 +152,29 @@ h1 {
   width: 38px;
   height: 40px;
   left: 34px;
-  top: 152px;
-
+  top: 104px;
   -webkit-border-radius: 25%;
   -moz-border-radius: 25%;
   border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-
   background: #6479EB;
 }
 
 .regular_ellipse{
 /* Design: Ellipse 6 */
   position: fixed;
-  width: 122px;
-  height: 122px;
-  left: 1279px;
-  top: 851px;
-
+  width: 121px;
+  height: 121px;
+  left: 1312px;
+  top: 613px;
   -webkit-border-radius: 25%;
   -moz-border-radius: 25%;
   border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-
   background: #FFAC5F;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
 .half_ellipse{
@@ -215,16 +183,14 @@ h1 {
   width: 120px;
   height: 104px;
   left: 765px;
-  top: 980px;
-
+  top: 710px;
   -webkit-border-radius: 25%;
   -moz-border-radius: 25%;
   border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-
   background: #F55E5E;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
   transform: matrix(1, 0, 0, -1, 0, 0);
 }
 
@@ -233,17 +199,15 @@ h1 {
   position: fixed;
   width: 360px;
   height: 360px;
-  left: -127px;
-  top: 821px;
-
+  left: -130px;
+  top: 619px;
   -webkit-border-radius: 25%;
   -moz-border-radius: 25%;
   border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-
   background: #84C4F3;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
 .inner_cut_ellipse{
@@ -252,14 +216,12 @@ h1 {
   width: 300px;
   height: 300px;
   left: -97px;
-  top: 851px;
-
+  top: 641px;
   -webkit-border-radius: 25%;
   -moz-border-radius: 25%;
   border-radius: 50%;
   -ms-border-radius: 50%;
   -o-border-radius: 50%;
-
   background: #6479EB;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px rgb(0 0 0 / 25%);
 }
