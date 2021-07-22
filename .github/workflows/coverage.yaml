@@ -17,6 +17,7 @@ jobs:
           python -m pip install --upgrade pip pytest
           pip install coverage                            #this is new
           pip install flask
+          pip install requests
 
       - name: Test with unittest
         run: python3 -m unittest tester.py
