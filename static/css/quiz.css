@@ -49,6 +49,9 @@ body {
 input {
   display: none;
 }
+input[type=checkbox]:checked + label {
+  background-color: #FCFE87;
+} 
 /* question circle: Ellipse */
 .question_circle{
   position: fixed;
@@ -71,10 +74,10 @@ input {
 /* question txt box */
 .question_txt{
   position: fixed;
-  width: 615px;
-  height: 175px;
-  left: 922px;
-  top: 92px;
+  width: 606px;
+  height: 166px;
+  left: 883px;
+  top: 88px;
   font-style: normal;
   font-weight: normal;
   font-size: 30px;
@@ -111,6 +114,12 @@ label {
   line-height: 4rem;
   margin-bottom: -24px;
 }
+
+label:hover {
+  cursor: pointer;
+  background-color: #FCFE87;
+}
+
 
 #container {
   background: #6479EB;
