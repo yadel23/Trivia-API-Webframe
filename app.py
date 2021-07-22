@@ -1,8 +1,7 @@
-import html
-import random
+from flask import Flask, render_template, redirect, request
 import requests
-from flask import Flask, render_template,
-session, redirect, url_for, jsonify, request
+import random
+import html
 app = Flask(__name__)
 
 
@@ -11,6 +10,7 @@ app.config['SECRET_KEY'] = '51'
 
 @app.route("/quiz")
 def quiz():
+
     return render_template("quiz.html")
 
 
@@ -32,22 +32,31 @@ def user_input():
     Json = getJson(url)
     correct_answers, final_answers, question_list = toDict(Json)
 
+    # session['correct_answers'] = correct_answers
+    # session["final_answers"] = final_answers
+    # session["question_list"] = question_list
+    # print('INITIAL LIST: ', question_list)
+
+    # next_que = [0]
+    # session["next_que"] = next_que
+    # quiz(correct_answers,final_answers,question_list)
+    # next_question(correct_answers,final_answers,question_list)
+
     return quiz(correct_answers, final_answers, question_list)
 
 
 def getUrl(amount, category, difficulty, typeQ):
     Base_url = 'https://opentdb.com/api.php?amount=' + str(amount)
     final_url = Base_url
-    # category
+    # categoryA
     if category != 'default_c':
         final_url = final_url + '&category=' + str(category)
-        Trivia - API - Webframe / README.md
 
     # difficulty
     if difficulty != 'default_d':
         final_url = final_url + '&difficulty=' + str(difficulty)
 
-    # type_Q
+    # type
     if typeQ != 'default_t':
         final_url = final_url + '&type=' + str(typeQ)
 
@@ -76,7 +85,7 @@ def toDict(json_data):
         answers.append(correct)
         random.shuffle(answers)
         final_answers.append(answers)
-    # print('q list ', question_list)
+    print('q list ', question_list)
     # print('f answers ', final_answers)
     # print('c list' , correct_list)
 
@@ -86,6 +95,18 @@ def toDict(json_data):
 @app.route("/")
 @app.route("/home")
 def home():
+    global next_que
+    global question_list
+    global correct_answers
+    global final_answers
+    global amount
+    global score
+    next_que = 0
+    amount = 0
+    score = 0
+    question_list = []
+    final_answers = []
+    correct_answers = []
     return render_template("home.html")
 
 
@@ -94,13 +115,23 @@ def quiz_2():
     return render_template("quiz.html")
 
 
+@app.route("/nickname", methods=["POST"])
+def nickname_page():
+    global nickname
+    nickname = request.form.get("nickname")
+    return render_template("info.html")
+
+
 @app.route("/info")
 def info():
     return render_template("info.html")
 
 
 def quiz(correct_answers, final_answers, question_list):
+    # redirect("/quiz")
     question_type = list(question_list.values())[0]
+    # print(question_type)
+    # print(next(iter(question_list)))
     question_name = list(question_list.keys())[0]
 
     if question_type == 'multiple':
@@ -141,8 +172,8 @@ def next_question():
 
     answer = request.form.get("answers")
 
-    print('outside', final_answers[next_que][int(answer)])
-    print('outside', correct_answers[next_que])
+    # print('outside', final_answers[next_que][int(answer)])
+    # print('outside', correct_answers[next_que])
     if(final_answers[next_que][int(answer)] == correct_answers[next_que]):
         print(final_answers[next_que][int(answer)])
         print(correct_answers[next_que])
@@ -150,17 +181,17 @@ def next_question():
 
     if int(next_que + 1) == int(amount):
         print('\n\n\nLAST QUESTION\n\n\n\n')
-        # return '<script>window.alert("You are done, score is
-        # "){score}</script>'
-        print(score)
-        return home()
+        link = "/display_score/" + str(score) + str(amount)
+        return redirect(link)
+        # print(score)
+        # return home()
     next_que += 1
     question_type = list(question_list.values())[next_que]
     question_name = list(question_list.keys())[next_que]
     # print(question_name)
 
-    print(next_que)
-    print('AMT: ', amount)
+    # print(next_que)
+    # print('AMT: ', amount)
 
     if question_type == 'multiple':
         print(final_answers)
@@ -188,6 +219,23 @@ def next_question():
             html.unescape(question_name),
             answer1='True',
             answer2='False')
+
+
+@app.route("/display_score/<score><amount>")
+def display_score(score, amount):
+    global nickname
+    try:
+        return render_template(
+            "score.html",
+            nickname=nickname,
+            score=score,
+            amount=amount)
+    except BaseException:
+        return render_template(
+            "score.html",
+            nickname="User",
+            score=score,
+            amount=amount)
 
 
 if __name__ == '__main__':

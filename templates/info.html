@@ -1,99 +1,119 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <link rel="icon" href="../../../../favicon.ico">
 
-<head>
-   <meta charset="utf-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-   <meta name="description" content="">
-   <meta name="author" content="">
-   <link rel="icon" href="../../../../favicon.ico">
-   <title>Info Page</title>
-   <!-- Bootstrap core CSS -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js" integrity="sha512-RdSPYh1WA6BF0RhpisYJVYkOyTzK4HwofJ3Q7ivt/jkpW6Vc8AurL1R+4AUcvn9IwEKAPm/fk7qFZW3OuiUDeg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-   <!-- Custom styles for this template -->
-   <link rel="stylesheet" href="{{ url_for('static',    filename='css/info.css') }}">
-</head>
+        <title>Info Page</title>
 
-<body>
-   <div class="container-fluid">
-      <div class="row">
-         <div class="col-lg-6" id="left">
-            <div class="navbar">
-               <div id="home"><a href="/home" id="home_tag">Home</a></div>
-            </div>
-            <div class="container-fluid" id="user_input_container">
-               <form name="user_input_form" method="POST" action="/user/input" id="user_input">
-                  <label>Number of Questions: </label>
-                  <input type="number" step="any" min="1" max="50" name="amount" data-error="Enter the number of questions from 1-50" placeholder="10" required><br>
-                  <label>Select Category: </label>
-                  <select name="category" id="category">
-                     <option value="default_c">Any Category</option>
-                     <option value="9">General Knowledge</option>
-                     <option value="10">Entertainment: Books</option>
-                     <option value="11">Entertainment: Film</option>
-                     <option value="12">Entertainment: Music</option>
-                     <option value="13">Entertainment: Musicals and Theatres</option>
-                     <option value="14">Entertainment: Television</option>
-                     <option value="15">Entertainment: Video Games</option>
-                     <option value="16">Entertainment: Board Games</option>
-                     <option value="17">Science and Nature</option>
-                     <option value="18">Science: Computers</option>
-                     <option value="19">Science: Mathematics</option>
-                     <option value="20">Mythology</option>
-                     <option value="21">Sports</option>
-                     <option value="22">Geography</option>
-                     <option value="23">History</option>
-                     <option value="24">Politics</option>
-                     <option value="25">Art</option>
-                     <option value="26">Celebrities</option>
-                     <option value="27">Animals</option>
-                     <option value="28">Vehicles</option>
-                     <option value="29">Entertainment: Comics</option>
-                     <option value="30">Science: Gadgets</option>
-                     <option value="31">Entertainment: Japanese Anime and Manga</option>
-                     <option value="32">Entertainment: Cartoon and Animations</option>
-                  </select>
-                  <label>Select Difficulty:</label>
-                  <select name="difficulty" id="category">
-                     <option value="default_d">Any Difficulty</option>
-                     <option value="easy">Easy</option>
-                     <option value="medium">Medium</option>
-                     <option value="hard">Hard</option>
-                  </select>
-                  <label>Select Type:</label>
-                  <select name="type" id="category">
-                     <option value="default_t">Any Type</option>
-                     <option value="multiple">Multiple Choice</option>
-                     <option value="boolean">True/False</option>
-                  </select>
-                  <button type="submit" id="form_submit">submit</button>
-               </form>
-               <div id="left_ellipse">
-                  <div id="inner_circle"></div>
-               </div>
-               <div id="right_ellipse"></div>
-            </div>
-         </div>
-         <div class="col-lg-6" id="right">
-            <div class="container-fluid" id="instructions">instructions/info</div>
-            <div class="container-fluid" id="empty"></div>
-            <div class="container-fluid" id="stuff"> Hello, Today you are going to take a quiz to furthur your knowledge!<br>
-               <br> 1. Pick the amount of questions you want for your quiz. <br>
-               <br> 2. Select the catagory of choice for your quiz. <br>
-               <br> 3. Select the difficulty of choice for your quiz. <br>
-               <br> 4. Select the type of quiz you want to do. <br>
-               <br> 5. Click on submit. <br>
-               <br> 6. Once you submit your quiz choices, you will be redirected to take your quiz. <br>
-               <br> 7. Once you are done with your quiz and submit it, you will be redirected to see your score.
-            </div>
-         </div>
-      </div>
-   </div>
-</body>
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+            integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootbox.js/5.5.2/bootbox.min.js" integrity="sha512-RdSPYh1WA6BF0RhpisYJVYkOyTzK4HwofJ3Q7ivt/jkpW6Vc8AurL1R+4AUcvn9IwEKAPm/fk7qFZW3OuiUDeg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>  
 
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="{{ url_for('static',    filename='css/info.css') }}">
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-6" id="left">
+                    <div class = "navbar">
+                        <div id="home"><a href="/home" id="home_tag">Home</a></div>
+                    </div>
+                    <div class="container-fluid" id="user_input_container">
+                        <form name="user_input_form" method="POST" action="/user/input" id="user_input">
+                            <label>Number of Questions: </label>
+                            <input type="number" step="any" min="1" max="50" name="amount" data-error="Enter the number of questions from 1-50" placeholder="10" required><br>
+                            <label>Select Category: </label>
+                            <select name="category" id="category">
+                                <option value="default_c">Any Category</option>
+                                <option value="9">General Knowledge</option>
+                                <option value="10">Entertainment: Books</option>
+                                <option value="11">Entertainment: Film</option>
+                                <option value="12">Entertainment: Music</option>
+                                <option value="13">Entertainment: Musicals and Theatres</option>
+                                <option value="14">Entertainment: Television</option>
+                                <option value="15">Entertainment: Video Games</option>
+                                <option value="16">Entertainment: Board Games</option>
+                                <option value="17">Science and Nature</option>
+                                <option value="18">Science: Computers</option>
+                                <option value="19">Science: Mathematics</option>
+                                <option value="20">Mythology</option>
+                                <option value="21">Sports</option>
+                                <option value="22">Geography</option>
+                                <option value="23">History</option>
+                                <option value="24">Politics</option>
+                                <option value="25">Art</option>
+                                <option value="26">Celebrities</option>
+                                <option value="27">Animals</option>
+                                <option value="28">Vehicles</option>
+                                <option value="29">Entertainment: Comics</option>
+                                <option value="30">Science: Gadgets</option>
+                                <option value="31">Entertainment: Japanese Anime and Manga</option>
+                                <option value="32">Entertainment: Cartoon and Animations</option>
+                            </select>
+                            <label>Select Difficulty:</label>
+                            <select name="difficulty" id="category">
+                                <option value="default_d">Any Difficulty</option>
+                                <option value="easy">Easy</option>
+                                <option value="medium">Medium</option>
+                                <option value="hard">Hard</option>
+                            </select>
+                            <label>Select Type:</label>
+                            <select name="type" id="category">
+                                <option value="default_t">Any Type</option>
+                                <option value="multiple">Multiple Choice</option>
+                                <option value="boolean">True/False</option>
+                            </select>
+                            <button type="submit" id="form_submit">submit</button>
+                        </form>
+                        <div id="left_ellipse"><div id="inner_circle"></div></div>
+                        <div id="right_ellipse"></div> 
+                    </div>
+                </div>
+                <div class="col-lg-6" id="right">
+                    <div class="container-fluid" id="instructions">instructions/info</div>
+                    <div class="container-fluid" id="empty"></div>
+                    <div class="container-fluid" id="stuff">
+                        Hello, Today you are going to take a quiz to furthur your knowledge!<br>
+                        <br>
+                        1. Pick the amount of questions you want for your quiz.
+                        <br>
+                        <br>
+                        2. Select the catagory of choice for your quiz.
+                        <br>
+                        <br>
+                        3. Select the difficulty of choice for your quiz.
+                        <br>
+                        <br>
+                        4. Select the type of quiz you want to do.
+                        <br>
+                        <br>
+                        5. Click on submit.
+                        <br>
+                        <br>
+                        6. Once you submit your quiz choices, you will be redirected to take your quiz.
+                        <br>
+                        <br>
+                        7. Once you are done with your quiz and submit it, you will be redirected to see your score.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
 </html>
