@@ -1,5 +1,4 @@
-from flask import Flask, render_template, session, redirect, url_for, jsonify, request, flash
-from flask.helpers import flash
+from flask import Flask, render_template, redirect, request
 import requests, random, html
 app = Flask(__name__)
 
@@ -91,6 +90,18 @@ def toDict(json_data):
 @app.route("/")
 @app.route("/home")
 def home():
+    global next_que
+    global question_list
+    global correct_answers
+    global final_answers 
+    global amount
+    global score
+    next_que = 0
+    amount = 0
+    score = 0
+    question_list = []
+    final_answers = []
+    correct_answers = []
     return render_template("home.html")
 
 
