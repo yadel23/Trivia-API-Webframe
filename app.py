@@ -1,4 +1,5 @@
-from flask import Flask, render_template, session, redirect, url_for, jsonify, request
+from flask import Flask, render_template, session, redirect, url_for, jsonify, request, flash
+from flask.helpers import flash
 import requests, random, html
 app = Flask(__name__)
 
@@ -7,6 +8,7 @@ app.config['SECRET_KEY'] = '51'
 
 @app.route("/quiz")
 def quiz():
+
     return render_template("quiz.html")
 
 question_list = []
@@ -96,8 +98,10 @@ def home():
 def quiz_2():
     return render_template("quiz.html")
 
-@app.route("/info")
-def info():
+@app.route("/nickname")
+def nickname_page():
+    global nickname
+    nickname = request.form.get("nickname")
     return render_template("info.html")
 
 
@@ -139,9 +143,10 @@ def next_question():
 
     if int(next_que + 1) == int(amount):
         print('\n\n\nLAST QUESTION\n\n\n\n')
-        #return '<script>window.alert("You are done, score is "){score}</script>'
-        print(score)
-        return home()
+        link = "/display_score/" + str(score) + str(amount)
+        return redirect(link)
+        #print(score)
+        #return home()
     next_que += 1
     question_type = list(question_list.values())[next_que]
     question_name = list(question_list.keys())[next_que]                    
@@ -163,7 +168,10 @@ def next_question():
         print(final_answers)
         return render_template("quiz.html", question = str(next_que + 1) + ") "+ html.unescape(question_name), answer1 = 'True', answer2 = 'False')
 
-      
+@app.route("/display_score/<score><amount>")
+def display_score(score, amount):
+    global nickname
+    return render_template("score.html",  nickname = nickname, score = score, amount = amount)   
    
 
       

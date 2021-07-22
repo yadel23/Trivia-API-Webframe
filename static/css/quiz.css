@@ -70,7 +70,20 @@ input[type=checkbox]:checked + label {
   box-shadow: inset 0px 4px 4px rgb(0 0 0 / 25%);
 }
 
-
+.jumbotron {
+  width: 20px;
+  height: 10px;
+  background-color: #DCB1B1;
+  justify-content: center;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+}
+#nickname_choice {
+  display: block;
+  font-size: 10px;
+  color: black;
+}
 /* question txt box */
 .question_txt{
   position: fixed;
