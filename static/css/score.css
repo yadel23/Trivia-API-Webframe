@@ -1,10 +1,18 @@
 body {
+    font-family: 'Comic Sans MS', monospace;
     background-color: #6479EB;
 }
 
 .jumbotron {
-    height: 50px;
-    width: 80px;
+    height: 32rem;
+    width: 44rem;
     background-color: #EEB2B2;
     color: black;
+    margin: 100px 412px 17px;
+}
+p {
+    font-size: 39px;
+}
+a:hover {
+    color: brown;
 }

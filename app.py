@@ -98,7 +98,7 @@ def home():
 def quiz_2():
     return render_template("quiz.html")
 
-@app.route("/nickname")
+@app.route("/nickname", methods = ["POST"])
 def nickname_page():
     global nickname
     nickname = request.form.get("nickname")
@@ -134,8 +134,8 @@ def next_question():
 
     answer = request.form.get("answers")
     
-    print('outside', final_answers[next_que][int(answer)])
-    print('outside', correct_answers[next_que])
+    #print('outside', final_answers[next_que][int(answer)])
+    #print('outside', correct_answers[next_que])
     if(final_answers[next_que][int(answer)] == correct_answers[next_que]): 
         print(final_answers[next_que][int(answer)])
         print(correct_answers[next_que])
@@ -153,8 +153,8 @@ def next_question():
     #print(question_name) 
 
     
-    print(next_que)
-    print('AMT: ', amount)
+    #print(next_que)
+    #print('AMT: ', amount)
     
     
       
