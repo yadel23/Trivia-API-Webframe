@@ -47,7 +47,7 @@ def getUrl(amount, category, difficulty, typeQ):
     if difficulty != 'default_d':
         final_url = final_url + '&difficulty=' + str(difficulty)
 
-    # type
+    # type_Q
     if typeQ != 'default_t':
         final_url = final_url + '&type=' + str(typeQ)
 
