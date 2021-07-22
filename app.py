@@ -104,6 +104,9 @@ def nickname_page():
     nickname = request.form.get("nickname")
     return render_template("info.html")
 
+@app.route("/info")
+def info():
+    return render_template("info.html")
 
 
 def quiz(correct_answers,final_answers,question_list):
@@ -171,7 +174,12 @@ def next_question():
 @app.route("/display_score/<score><amount>")
 def display_score(score, amount):
     global nickname
-    return render_template("score.html",  nickname = nickname, score = score, amount = amount)   
+    try:
+        return render_template("score.html",  nickname = nickname, score = score, amount = amount)  
+    except :
+        return render_template("score.html",  nickname = "User", score = score, amount = amount)  
+    
+     
    
 
       
